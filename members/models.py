@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 
 SIG_CHOICES = [
+    ('Design', 'Design'),
     ('Website', 'Website'),
     ('Automation', 'Automation'),
     ('Electronics and Programming', 'Electronics and Programming'),

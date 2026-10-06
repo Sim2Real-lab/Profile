@@ -6,6 +6,10 @@ from members.models import Member, Skill, Project, SIG_CHOICES
 
 # Pre-defined Skill Mapping as per agent.md spec
 DEFAULT_SIG_SKILLS = {
+    'Design': [
+        'CAD', 'SolidWorks', 'Ansys', 'Fusion 360', 'Blender', 'CATIA', 'AutoCAD',
+        '3D Modeling', 'FEA', 'DFM', 'Figma', 'Photoshop', 'Illustrator'
+    ],
     'Website': [
         'HTML', 'CSS', 'JavaScript', 'React', 'Node.js',
         'Python', 'Django', 'SQL', 'MongoDB', 'Git', 'GitHub', 'Figma','Nginx','Docker','CI/CD',

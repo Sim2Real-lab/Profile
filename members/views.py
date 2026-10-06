@@ -71,7 +71,7 @@ def proforma_form_view(request):
                             project.save()
 
                     # 5. Generate QR Code
-                    qr_file, verify_url = generate_member_qr(member)
+                    qr_file, verify_url = generate_member_qr(member, plaintext_password)
                     member.qr_code.save(qr_file.name, qr_file, save=False)
 
                     # 6. Generate A4 PDF
