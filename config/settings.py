@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'members.middleware.CleanHeadMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'config.urls'
 
@@ -91,7 +93,11 @@ DB_PASSWORD = os.getenv('DB_PASSWORD', '')
 DB_HOST = os.getenv('DB_HOST', '127.0.0.1')
 DB_PORT = os.getenv('DB_PORT', '5432')
 
-if DATABASE_URL:
+# Render internal PostgreSQL hosts (@dpg-...) are only reachable inside Render's cloud network.
+# If running locally without RENDER env set, fallback to SQLite for local commands.
+is_internal_render_db_on_local = bool(DATABASE_URL and '@dpg-' in DATABASE_URL and not os.getenv('RENDER'))
+
+if DATABASE_URL and not is_internal_render_db_on_local:
     DATABASES = {
         'default': dj_database_url.config(
             default=DATABASE_URL,
@@ -117,6 +123,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
