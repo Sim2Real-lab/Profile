@@ -384,10 +384,12 @@
             let valid = true;
             const currentContainer = document.getElementById(`stepContent${step}`);
             const requiredInputs = currentContainer.querySelectorAll('input[required], select[required], textarea[required]');
+            const invalidFields = [];
 
             requiredInputs.forEach(input => {
                 if (!input.value.trim()) {
                     input.classList.add('is-invalid');
+                    invalidFields.push(input.name || input.id);
                     valid = false;
                 } else {
                     input.classList.remove('is-invalid');
@@ -395,10 +397,23 @@
             });
 
             if (step === 1) {
-                const rollNo = document.querySelector('[name="roll_no"]').value.trim();
-                const email = document.querySelector('[name="email"]').value.trim();
-                const phone = document.querySelector('[name="phone"]').value.trim();
+                const rollNo = document.querySelector('[name="roll_no"]')?.value.trim();
+                const email = document.querySelector('[name="email"]')?.value.trim();
+                const phone = document.querySelector('[name="phone"]')?.value.trim();
+                const photo = document.querySelector('[name="photo"]');
                 if (!rollNo || !email || !phone) valid = false;
+                if (photo && photo.files && photo.files.length > 0) {
+                    const file = photo.files[0];
+                    if (file.size > 5242880) {
+                        alert("Passport Photo size must be less than 5MB.");
+                        photo.classList.add('is-invalid');
+                        valid = false;
+                    }
+                }
+            }
+
+            if (!valid) {
+                console.warn(`[Proforma Form Validation] Step ${step} failed for fields:`, invalidFields);
             }
 
             return valid;
@@ -444,8 +459,8 @@
 
             const projectsArr = [];
             document.querySelectorAll('.project-form-card').forEach(card => {
-                const pName = card.querySelector('[name$="project_name"]').value.trim();
-                const pRole = card.querySelector('[name$="contribution"]').value.trim();
+                const pName = card.querySelector('[name$="project_name"]')?.value.trim();
+                const pRole = card.querySelector('[name$="contribution"]')?.value.trim();
                 if (pName) {
                     projectsArr.push(`<strong>${pName}</strong> - ${pRole}`);
                 }
@@ -533,14 +548,36 @@
             }
         }
 
-        formElement.addEventListener('submit', () => {
+        formElement.addEventListener('submit', (e) => {
+            console.log("[Proforma Form] Submitting form to server...");
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Submitting & Generating PDF...';
             localStorage.removeItem('proformaCache');
         });
+
+        // Detect server validation errors on load
+        let initialStep = 1;
+        {% if form.errors or project_formset.errors %}
+            try {
+                const formErrors = JSON.parse('{{ form.errors.as_json|escapejs }}');
+                console.error("[Proforma Form Server Errors]:", formErrors);
+            } catch(e) {
+                console.error("[Proforma Form Server Errors present]");
+            }
+            // Jump to the step with error
+            for (let i = 1; i <= totalSteps; i++) {
+                const stepEl = document.getElementById(`stepContent${i}`);
+                if (stepEl && (stepEl.querySelector('.text-danger') || stepEl.querySelector('.is-invalid'))) {
+                    initialStep = i;
+                    break;
+                }
+            }
+        {% endif %}
 
         // Initialize
         loadFormFromCache();
         if (sigCheckboxes.length > 0) updateSkillsFilter();
-        showStep(1);
+        showStep(initialStep);
     });
 </script>
 {% endblock %}
