@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Member Proforma | Robotech NITK{% endblock %}</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom Robotech CSS -->
+    <style>
+        :root {
+            --robotech-dark: #0f172a;
+            --robotech-blue: #0284c7;
+            --robotech-light-bg: #f8fafc;
+            --robotech-border: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--robotech-light-bg);
+            color: #334155;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-robotech {
+            background-color: var(--robotech-dark);
+            border-bottom: 3px solid var(--robotech-blue);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #ffffff !important;
+        }
+
+        .brand-accent {
+            color: #38bdf8;
+        }
+
+        .proforma-card {
+            background: #ffffff;
+            border: 1px solid var(--robotech-border);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            padding: 2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Step Indicator */
+        .step-wizard {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .step-wizard::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: #cbd5e1;
+            z-index: 1;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .step-item.active .step-icon {
+            background: var(--robotech-blue);
+            border-color: var(--robotech-blue);
+            color: #ffffff;
+        }
+
+        .step-item.completed .step-icon {
+            background: #10b981;
+            border-color: #10b981;
+            color: #ffffff;
+        }
+
+        .step-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step-item.active .step-label {
+            color: var(--robotech-dark);
+        }
+
+        .btn-robotech {
+            background-color: var(--robotech-blue);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .btn-robotech:hover {
+            background-color: #0369a1;
+            color: #ffffff;
+        }
+
+        .footer {
+            margin-top: auto;
+            background: var(--robotech-dark);
+            color: #94a3b8;
+            padding: 1.5rem 0;
+            font-size: 0.85rem;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-robotech py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'members:form' %}">
+                <i class="fa-solid fa-robot me-2 brand-accent fs-4"></i>
+                <span>ROBOTECH <span class="brand-accent">NITK</span></span>
+            </a>
+            <div class="ms-auto d-flex align-items-center">
+                <span class="badge bg-secondary me-3">Member Proforma System</span>
+                {% if user.is_staff %}
+                    <a href="{% url 'members:dashboard' %}" class="btn btn-sm btn-outline-light"><i class="fa-solid fa-gauge me-1"></i> Admin Dashboard</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="container my-4">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Robotech NITK. National Institute of Technology Karnataka, Surathkal.</p>
+            <small class="text-muted">Production Proforma System v1.0</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

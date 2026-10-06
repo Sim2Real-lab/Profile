@@ -1,0 +1,1132 @@
+WARNING 2026-10-06 02:10:54,022 log Not Found: /proforma/proforma/dashboard/
+WARNING 2026-10-06 02:10:54,532 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+WARNING 2026-10-06 02:12:45,283 log Not Found: /proforma/proforma/dashboard/
+WARNING 2026-10-06 02:12:45,713 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 02:24:46,134 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 02:25:01,226 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 02:25:03,464 basehttp "GET / HTTP/1.1" 200 56311
+WARNING 2026-10-06 02:25:04,439 log Not Found: /proforma/favicon.ico
+WARNING 2026-10-06 02:25:04,440 basehttp "GET /favicon.ico HTTP/1.1" 404 3878
+WARNING 2026-10-06 02:26:40,238 log Not Found: /proforma/proforma/
+WARNING 2026-10-06 02:26:40,239 basehttp "GET /proforma/ HTTP/1.1" 404 3872
+WARNING 2026-10-06 02:26:42,543 log Not Found: /proforma/proforma/
+WARNING 2026-10-06 02:26:42,544 basehttp "GET /proforma/ HTTP/1.1" 404 3872
+INFO 2026-10-06 03:02:46,973 basehttp "GET / HTTP/1.1" 200 56311
+WARNING 2026-10-06 03:02:47,203 log Not Found: /proforma/favicon.ico
+WARNING 2026-10-06 03:02:47,203 basehttp "GET /favicon.ico HTTP/1.1" 404 3878
+INFO 2026-10-06 03:08:18,635 basehttp "GET / HTTP/1.1" 200 56311
+INFO 2026-10-06 03:08:19,867 basehttp "GET / HTTP/1.1" 200 56311
+INFO 2026-10-06 03:12:34,547 basehttp "GET / HTTP/1.1" 200 56311
+INFO 2026-10-06 03:12:34,816 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\forms.py changed, reloading.
+INFO 2026-10-06 03:12:35,373 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:12:39,975 basehttp "GET / HTTP/1.1" 200 56003
+INFO 2026-10-06 03:12:40,782 basehttp "GET / HTTP/1.1" 200 56003
+INFO 2026-10-06 03:12:52,783 basehttp "GET / HTTP/1.1" 200 56004
+INFO 2026-10-06 03:12:57,486 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\forms.py changed, reloading.
+INFO 2026-10-06 03:12:58,002 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:15:33,941 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\models.py changed, reloading.
+INFO 2026-10-06 03:15:34,491 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:15:47,225 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\forms.py changed, reloading.
+INFO 2026-10-06 03:15:47,754 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:15:54,862 basehttp "GET / HTTP/1.1" 200 71882
+INFO 2026-10-06 03:22:20,281 basehttp "GET / HTTP/1.1" 200 71586
+WARNING 2026-10-06 03:22:20,329 log Not Found: /proforma/favicon.ico
+WARNING 2026-10-06 03:22:20,330 basehttp "GET /favicon.ico HTTP/1.1" 404 3878
+ERROR 2026-10-06 03:22:45,212 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 173: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:22:45,217 basehttp "GET / HTTP/1.1" 500 293819
+ERROR 2026-10-06 03:23:16,345 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:23:16,347 basehttp "GET / HTTP/1.1" 500 293821
+ERROR 2026-10-06 03:23:17,194 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:23:17,197 basehttp "GET / HTTP/1.1" 500 293821
+ERROR 2026-10-06 03:23:18,551 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:23:18,553 basehttp "GET / HTTP/1.1" 500 293821
+INFO 2026-10-06 03:23:22,323 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\models.py changed, reloading.
+INFO 2026-10-06 03:23:22,882 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:24:04,800 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:24:15,251 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:24:25,303 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:25:36,350 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\models.py changed, reloading.
+INFO 2026-10-06 03:25:36,844 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:26:20,091 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:27:05,543 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\forms.py changed, reloading.
+INFO 2026-10-06 03:27:05,991 autoreload Watching for file changes with StatReloader
+ERROR 2026-10-06 03:27:08,845 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:27:08,850 basehttp "GET / HTTP/1.1" 500 293819
+ERROR 2026-10-06 03:27:10,893 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:27:10,895 basehttp "GET / HTTP/1.1" 500 293819
+ERROR 2026-10-06 03:27:11,860 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:27:11,863 basehttp "GET / HTTP/1.1" 500 293819
+ERROR 2026-10-06 03:27:13,493 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:27:13,495 basehttp "GET / HTTP/1.1" 500 293819
+ERROR 2026-10-06 03:27:15,980 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:27:15,983 basehttp "GET / HTTP/1.1" 500 293819
+ERROR 2026-10-06 03:27:17,128 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 174: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:27:17,130 basehttp "GET / HTTP/1.1" 500 293819
+ERROR 2026-10-06 03:27:48,255 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 262: 'endblock', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:27:48,257 basehttp "GET / HTTP/1.1" 500 232239
+ERROR 2026-10-06 03:27:49,465 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 262: 'endblock', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:27:49,468 basehttp "GET / HTTP/1.1" 500 232239
+ERROR 2026-10-06 03:28:51,192 log Internal Server Error: /proforma/
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 110, in proforma_form_view
+    return render(request, 'members/form.html', context)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Adity\AppData\Roaming\Python\Python310\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 262: 'endblock', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2026-10-06 03:28:51,195 basehttp "GET / HTTP/1.1" 500 232239
+INFO 2026-10-06 03:29:24,346 basehttp "GET / HTTP/1.1" 200 70992
+INFO 2026-10-06 03:33:46,547 basehttp "GET / HTTP/1.1" 200 72729
+INFO 2026-10-06 03:35:50,225 basehttp "GET / HTTP/1.1" 200 72729
+INFO 2026-10-06 03:36:14,133 basehttp "GET / HTTP/1.1" 200 72729
+WARNING 2026-10-06 03:36:15,205 log Not Found: /proforma/favicon.ico
+WARNING 2026-10-06 03:36:15,206 basehttp "GET /favicon.ico HTTP/1.1" 404 3878
+INFO 2026-10-06 03:40:09,910 basehttp "GET / HTTP/1.1" 200 74110
+INFO 2026-10-06 03:46:13,824 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\forms.py changed, reloading.
+INFO 2026-10-06 03:46:14,401 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 03:46:17,851 basehttp "GET / HTTP/1.1" 200 83155
+WARNING 2026-10-06 03:47:13,595 pdf WeasyPrint PDF generation failed/unavailable (No module named 'weasyprint'). Using ReportLab fallback generator.
+ERROR 2026-10-06 03:47:13,597 views Error saving member proforma: No module named 'reportlab'
+Traceback (most recent call last):
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\views.py", line 78, in proforma_form_view
+    pdf_file = generate_proforma_pdf(member, plaintext_password)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\services\pdf.py", line 74, in generate_proforma_pdf
+    pdf_bytes = _generate_pdf_reportlab(member, plaintext_password, skills_list, projects_list)
+  File "C:\Users\Adity\Desktop\Robotech\profile\members\services\pdf.py", line 84, in _generate_pdf_reportlab
+    from reportlab.lib.pagesizes import letter, A4
+ModuleNotFoundError: No module named 'reportlab'
+INFO 2026-10-06 03:47:13,610 basehttp "POST / HTTP/1.1" 200 84677
+WARNING 2026-10-06 03:50:39,802 pdf WeasyPrint PDF generation failed/unavailable (No module named 'weasyprint'). Using ReportLab fallback generator.
+INFO 2026-10-06 03:50:39,924 views Successfully generated proforma for member RBT26-231MN003 (231MN003)
+INFO 2026-10-06 03:50:39,936 basehttp "POST / HTTP/1.1" 302 0
+WARNING 2026-10-06 03:50:39,947 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:50:39,948 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+INFO 2026-10-06 03:51:58,103 autoreload C:\Users\Adity\Desktop\Robotech\profile\config\settings.py changed, reloading.
+INFO 2026-10-06 03:51:58,670 autoreload Watching for file changes with StatReloader
+WARNING 2026-10-06 03:52:21,442 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:52:21,443 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:52:22,513 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:52:22,514 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:52:23,912 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:52:23,912 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+INFO 2026-10-06 03:52:29,588 basehttp "POST / HTTP/1.1" 200 85709
+INFO 2026-10-06 03:53:17,032 basehttp "POST / HTTP/1.1" 200 85738
+WARNING 2026-10-06 03:54:00,508 pdf WeasyPrint PDF generation failed/unavailable (No module named 'weasyprint'). Using ReportLab fallback generator.
+INFO 2026-10-06 03:54:00,636 views Successfully generated proforma for member RBT26-231MN03 (231MN03)
+INFO 2026-10-06 03:54:00,647 basehttp "POST / HTTP/1.1" 302 0
+WARNING 2026-10-06 03:54:00,655 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:54:00,655 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:55:07,688 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:55:07,689 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:55:09,311 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:55:09,311 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:55:11,128 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:55:11,129 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:55:11,776 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:55:11,777 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:55:32,418 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 03:55:32,476 views Successfully generated proforma for member RBT26-231MN3 (231MN3)
+INFO 2026-10-06 03:55:32,486 basehttp "POST / HTTP/1.1" 302 0
+WARNING 2026-10-06 03:55:32,495 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:55:32,495 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:55:40,728 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:55:40,728 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+WARNING 2026-10-06 03:55:45,160 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:55:45,161 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+INFO 2026-10-06 03:55:51,315 basehttp "POST / HTTP/1.1" 200 85709
+WARNING 2026-10-06 03:56:27,335 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 03:56:27,370 views Successfully generated proforma for member RBT26-231MN0003 (231MN0003)
+INFO 2026-10-06 03:56:27,382 basehttp "POST / HTTP/1.1" 302 0
+WARNING 2026-10-06 03:56:27,390 log Not Found: /proforma/proforma/success/
+WARNING 2026-10-06 03:56:27,391 basehttp "GET /proforma/success/ HTTP/1.1" 404 3896
+INFO 2026-10-06 11:30:01,492 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 11:30:03,403 basehttp "GET /proforma/success/ HTTP/1.1" 200 8106
+WARNING 2026-10-06 11:30:03,510 log Not Found: /proforma/favicon.ico
+WARNING 2026-10-06 11:30:03,511 basehttp "GET /favicon.ico HTTP/1.1" 404 2608
+WARNING 2026-10-06 11:30:12,065 log Not Found: /proforma/proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:30:12,065 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4224
+INFO 2026-10-06 11:32:39,459 autoreload C:\Users\Adity\Desktop\Robotech\profile\config\settings.py changed, reloading.
+INFO 2026-10-06 11:32:39,961 autoreload Watching for file changes with StatReloader
+WARNING 2026-10-06 11:33:22,697 log Not Found: /proforma/proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:33:22,698 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4224
+WARNING 2026-10-06 11:33:23,912 log Not Found: /proforma/proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:33:23,912 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4224
+WARNING 2026-10-06 11:33:39,096 log Not Found: /proforma/proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:33:39,096 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4224
+INFO 2026-10-06 11:34:09,929 autoreload C:\Users\Adity\Desktop\Robotech\profile\config\settings.py changed, reloading.
+INFO 2026-10-06 11:34:10,391 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 11:34:19,957 autoreload C:\Users\Adity\Desktop\Robotech\profile\config\settings.py changed, reloading.
+INFO 2026-10-06 11:34:20,454 autoreload Watching for file changes with StatReloader
+WARNING 2026-10-06 11:37:06,216 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:37:06,217 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:37:06,791 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:37:06,792 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:39:53,848 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:39:53,848 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:39:54,471 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:39:54,471 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:39:54,975 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:39:54,976 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:40:54,271 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:40:54,272 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:40:54,871 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:40:54,872 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:00,020 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:00,020 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:01,866 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:01,866 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:02,316 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:02,316 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:02,585 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:02,586 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:02,898 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:02,899 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:03,508 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:03,508 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:06,150 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:06,151 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:06,182 log Not Found: /favicon.ico
+WARNING 2026-10-06 11:41:06,183 basehttp "GET /favicon.ico HTTP/1.1" 404 2581
+WARNING 2026-10-06 11:41:09,475 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:09,476 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:09,507 log Not Found: /favicon.ico
+WARNING 2026-10-06 11:41:09,507 basehttp "GET /favicon.ico HTTP/1.1" 404 2581
+WARNING 2026-10-06 11:41:28,300 log Not Found: /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 11:41:28,300 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 4197
+WARNING 2026-10-06 11:41:28,328 log Not Found: /favicon.ico
+WARNING 2026-10-06 11:41:28,329 basehttp "GET /favicon.ico HTTP/1.1" 404 2581
+INFO 2026-10-06 11:43:22,519 basehttp "HEAD /proforma/success/ HTTP/1.1" 302 0
+INFO 2026-10-06 11:43:22,579 basehttp "HEAD /proforma/ HTTP/1.1" 200 0
+INFO 2026-10-06 11:43:22,579 basehttp "GET /proforma/success/ HTTP/1.1" 302 0
+INFO 2026-10-06 11:43:22,636 basehttp "GET /proforma/ HTTP/1.1" 200 84090
+INFO 2026-10-06 11:43:37,856 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 11:44:08,837 autoreload C:\Users\Adity\Desktop\Robotech\profile\config\urls.py changed, reloading.
+INFO 2026-10-06 11:44:09,373 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 11:44:36,695 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 302 0
+INFO 2026-10-06 11:44:36,703 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 11:45:12,436 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 302 0
+INFO 2026-10-06 11:45:12,441 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 11:56:40,763 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 302 0
+INFO 2026-10-06 11:56:40,771 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 12:00:14,517 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\services\pdf.py changed, reloading.
+INFO 2026-10-06 12:00:15,014 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 12:00:54,395 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\services\pdf.py changed, reloading.
+INFO 2026-10-06 12:00:54,850 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 12:01:08,403 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\services\pdf.py changed, reloading.
+INFO 2026-10-06 12:01:08,861 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 12:02:23,084 basehttp "GET /proforma/success/ HTTP/1.1" 200 8079
+INFO 2026-10-06 12:02:23,741 basehttp "GET /proforma/success/ HTTP/1.1" 200 8079
+WARNING 2026-10-06 12:02:30,531 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 12:02:51,727 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 12:04:57,224 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 12:05:04,610 basehttp "GET /proforma/success/ HTTP/1.1" 200 8079
+INFO 2026-10-06 12:05:05,951 basehttp "GET /proforma/success/ HTTP/1.1" 200 8079
+INFO 2026-10-06 12:05:07,551 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 12:06:38,687 basehttp "POST / HTTP/1.1" 302 0
+INFO 2026-10-06 12:06:38,765 basehttp "GET /proforma/ HTTP/1.1" 200 84090
+WARNING 2026-10-06 12:07:03,575 log Not Found: /GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+WARNING 2026-10-06 12:07:03,576 basehttp "GET /GET%20/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/%20HTTP/1.1%22%20200%2041006 HTTP/1.1" 404 2952
+WARNING 2026-10-06 12:07:12,416 log Not Found: /GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/
+WARNING 2026-10-06 12:07:12,417 basehttp "GET /GET%20/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 404 2874
+WARNING 2026-10-06 12:07:16,856 log Not Found: /GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e
+WARNING 2026-10-06 12:07:16,856 basehttp "GET /GET%20/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e HTTP/1.1" 404 2859
+INFO 2026-10-06 12:07:38,118 basehttp "GET /proforma/proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e HTTP/1.1" 302 0
+INFO 2026-10-06 12:07:38,126 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e HTTP/1.1" 301 0
+INFO 2026-10-06 12:07:38,155 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/ HTTP/1.1" 200 9782
+INFO 2026-10-06 12:07:38,232 basehttp "GET /media/photos/2026/10/project-motion-rtn-qr_NQcFoFX.png HTTP/1.1" 200 26721
+INFO 2026-10-06 12:07:45,127 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 12:08:29,952 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/pdf/ HTTP/1.1" 200 41006
+INFO 2026-10-06 12:10:15,996 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\views.py changed, reloading.
+INFO 2026-10-06 12:10:16,479 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 12:11:05,176 autoreload C:\Users\Adity\Desktop\Robotech\profile\members\services\pdf.py changed, reloading.
+INFO 2026-10-06 12:11:05,642 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 12:14:23,753 basehttp "GET /proforma/member/b0a9a49a-0062-4136-b40e-d93945aac99e/ HTTP/1.1" 200 9782
+INFO 2026-10-06 12:14:23,813 basehttp "GET /media/photos/2026/10/project-motion-rtn-qr_NQcFoFX.png HTTP/1.1" 200 26721
+WARNING 2026-10-06 12:14:24,717 log Not Found: /favicon.ico
+WARNING 2026-10-06 12:14:24,718 basehttp "GET /favicon.ico HTTP/1.1" 404 2719
+WARNING 2026-10-06 12:14:34,073 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 12:14:46,306 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-10-06 12:14:46,360 basehttp "GET /proforma/ HTTP/1.1" 200 84090
+WARNING 2026-10-06 12:14:47,288 log Not Found: /favicon.ico
+WARNING 2026-10-06 12:14:47,289 basehttp "GET /favicon.ico HTTP/1.1" 404 2719
+WARNING 2026-10-06 12:16:28,201 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 12:16:28,328 views Successfully generated proforma for member RBT26-231CS001 (231CS001)
+INFO 2026-10-06 12:16:28,340 basehttp "POST /proforma/ HTTP/1.1" 302 0
+INFO 2026-10-06 12:16:28,347 basehttp "GET /proforma/success/ HTTP/1.1" 200 8064
+WARNING 2026-10-06 12:16:29,926 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 12:16:29,974 basehttp "GET /proforma/member/4da32f0b-c1ab-45a8-8727-c0fdd0b4c052/pdf/ HTTP/1.1" 200 57350
+WARNING 2026-10-06 19:16:52,086 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+WARNING 2026-10-06 19:36:42,345 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+WARNING 2026-10-06 19:36:59,870 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 19:37:07,539 autoreload Watching for file changes with StatReloader
+INFO 2026-10-06 19:37:14,207 basehttp "GET /proforma/success/ HTTP/1.1" 200 8064
+WARNING 2026-10-06 19:37:14,287 log Not Found: /favicon.ico
+WARNING 2026-10-06 19:37:14,287 basehttp "GET /favicon.ico HTTP/1.1" 404 2719
+INFO 2026-10-06 19:37:17,351 basehttp "GET /proforma/success/ HTTP/1.1" 200 8064
+INFO 2026-10-06 19:37:19,672 basehttp "GET /proforma/success/ HTTP/1.1" 200 8064
+WARNING 2026-10-06 19:37:20,770 log Not Found: /favicon.ico
+WARNING 2026-10-06 19:37:20,770 basehttp "GET /favicon.ico HTTP/1.1" 404 2719
+INFO 2026-10-06 19:37:23,854 basehttp "GET /proforma/ HTTP/1.1" 200 84090
+WARNING 2026-10-06 19:39:51,524 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 19:39:51,744 views Successfully generated proforma for member RBT26-231MN0000003 (231MN0000003)
+INFO 2026-10-06 19:39:51,757 basehttp "POST /proforma/ HTTP/1.1" 302 0
+INFO 2026-10-06 19:39:51,764 basehttp "GET /proforma/success/ HTTP/1.1" 200 8085
+WARNING 2026-10-06 19:39:54,372 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.
+INFO 2026-10-06 19:39:54,526 basehttp "GET /proforma/member/a668765a-b73a-4f8e-975f-a4f30e3b9d8d/pdf/ HTTP/1.1" 200 353289
+INFO 2026-10-06 19:42:43,957 autoreload C:\Users\Adity\Desktop\Robotech\profile\config\settings.py changed, reloading.
+INFO 2026-10-06 19:42:44,590 autoreload Watching for file changes with StatReloader
+WARNING 2026-10-06 19:43:31,483 pdf WeasyPrint PDF generation failed/unavailable (cannot load library 'libgobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'libgobject-2.0-0'). Using ReportLab fallback generator.

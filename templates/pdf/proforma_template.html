@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robotech NITK Member Proforma - {{ member.member_id }}</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 12mm 14mm 12mm 14mm;
+            @bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 8pt;
+                color: #64748b;
+            }
+            @bottom-left {
+                content: "Robotech NITK - Confidential Member Record";
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 8pt;
+                color: #64748b;
+            }
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 8.5pt;
+            line-height: 1.4;
+            color: #1e293b;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 6px;
+        }
+
+        .header-table td {
+            vertical-align: middle;
+        }
+
+        .logo-left {
+            width: 70px;
+            text-align: left;
+        }
+
+        .logo-right {
+            width: 70px;
+            text-align: right;
+        }
+
+        .header-logo {
+            height: 48px;
+            width: auto;
+            max-width: 65px;
+            object-fit: contain;
+        }
+
+        .header-center {
+            text-align: center;
+            padding: 0 8px;
+        }
+
+        .org-title {
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #475569;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .brand-title {
+            font-size: 18pt;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: 0.8px;
+            line-height: 1.1;
+        }
+
+        .brand-sub {
+            font-size: 8.5pt;
+            color: #0284c7;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-top: 2px;
+        }
+
+        .meta-bar {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 5px 12px;
+            border-radius: 4px;
+            display: table;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .meta-left {
+            display: table-cell;
+            text-align: left;
+            font-size: 8.5pt;
+            vertical-align: middle;
+        }
+
+        .meta-right {
+            display: table-cell;
+            text-align: right;
+            font-size: 8pt;
+            color: #94a3b8;
+            vertical-align: middle;
+        }
+
+        .meta-id {
+            font-weight: bold;
+            color: #38bdf8;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #0284c7;
+            padding-bottom: 2px;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .profile-container {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 8px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .profile-container td {
+            padding: 8px 10px;
+            vertical-align: top;
+        }
+
+        .info-grid {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-grid td {
+            padding: 3px 5px;
+            font-size: 8.5pt;
+        }
+
+        .label {
+            font-weight: 700;
+            color: #475569;
+            width: 100px;
+            text-transform: uppercase;
+            font-size: 7.5pt;
+            letter-spacing: 0.3px;
+        }
+
+        .val {
+            color: #0f172a;
+            font-size: 8.5pt;
+        }
+
+        .val-bold {
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 8.5pt;
+        }
+
+        .photo-box {
+            width: 110px;
+            text-align: center;
+        }
+
+        .member-photo {
+            width: 95px;
+            height: 125px;
+            object-fit: cover;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 2px 7px;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 7.5pt;
+            font-weight: 700;
+            border-radius: 3px;
+            border: 1px solid #bae6fd;
+        }
+
+        .skills-container {
+            margin-bottom: 8px;
+        }
+
+        .skill-chip {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            font-size: 8pt;
+            border-radius: 4px;
+            margin: 2px 3px 2px 0;
+            font-weight: 600;
+        }
+
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 8px;
+        }
+
+        .table-custom th {
+            background: #0f172a;
+            color: #ffffff;
+            font-weight: 700;
+            text-align: left;
+            padding: 5px 8px;
+            font-size: 8pt;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        .table-custom td {
+            padding: 5px 8px;
+            font-size: 8.5pt;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .table-custom tr:nth-child(even) td {
+            background: #f8fafc;
+        }
+
+        .reflection-block {
+            margin-bottom: 6px;
+        }
+
+        .q-title {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 8.5pt;
+            margin-bottom: 3px;
+        }
+
+        .q-ans {
+            background: #f0f9ff;
+            border-left: 3px solid #0284c7;
+            border-top: 1px solid #e0f2fe;
+            border-right: 1px solid #e0f2fe;
+            border-bottom: 1px solid #e0f2fe;
+            border-radius: 0 4px 4px 0;
+            padding: 6px 9px;
+            font-size: 8.5pt;
+            color: #334155;
+            white-space: pre-wrap;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        .credentials-box {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f8fafc;
+            border: 1.5px solid #0284c7;
+            border-radius: 4px;
+            margin-top: 10px;
+            page-break-inside: avoid;
+        }
+
+        .credentials-box td {
+            padding: 8px 12px;
+            vertical-align: middle;
+        }
+
+        .cred-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cred-val {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 9pt;
+            font-weight: 700;
+            color: #0284c7;
+        }
+
+        .qr-img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .tnc-box {
+            margin-top: 8px;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 7.5pt;
+            color: #475569;
+            font-style: italic;
+            page-break-inside: avoid;
+        }
+
+        .sig-table {
+            width: 100%;
+            margin-top: 18px;
+            border-collapse: collapse;
+            page-break-inside: avoid;
+        }
+
+        .sig-table td {
+            width: 50%;
+            text-align: center;
+            vertical-align: bottom;
+        }
+
+        .sig-line {
+            border-bottom: 1px dashed #475569;
+            width: 75%;
+            margin: 0 auto 5px auto;
+        }
+
+        .sig-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #0f172a;
+            display: block;
+        }
+
+        .sig-sub {
+            font-size: 7.5pt;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Top Left (NITK) and Top Right (Robotech) Logos -->
+    <table class="header-table">
+        <tr>
+            <td class="logo-left">
+                {% if nitk_logo %}
+                    <img src="{{ nitk_logo }}" class="header-logo" alt="NITK Logo">
+                {% else %}
+                    <img src="nitk.jpg" class="header-logo" alt="NITK Logo">
+                {% endif %}
+            </td>
+            <td class="header-center">
+                <div class="org-title">NATIONAL INSTITUTE OF TECHNOLOGY KARNATAKA, SURATHKAL</div>
+                <div class="brand-title">ROBOTECH NITK</div>
+                <div class="brand-sub">Official Member Proforma Record</div>
+            </td>
+            <td class="logo-right">
+                {% if robotech_logo %}
+                    <img src="{{ robotech_logo }}" class="header-logo" alt="Robotech Logo">
+                {% else %}
+                    <img src="robotech.jpg" class="header-logo" alt="Robotech Logo">
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <!-- Meta Information Bar -->
+    <div class="meta-bar">
+        <div class="meta-left">
+            Member ID: <span class="meta-id">{{ member.member_id }}</span>
+        </div>
+        <div class="meta-right">
+            Submitted: <strong>{{ member.created_at|date:"d F Y" }}</strong>
+        </div>
+    </div>
+
+    <!-- Personal & Club Details -->
+    <table class="profile-container">
+        <tr>
+            <td>
+                <table class="info-grid">
+                    <tr>
+                        <td class="label">FULL NAME:</td>
+                        <td class="val-bold">{{ member.name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">ROLL NUMBER:</td>
+                        <td class="val">{{ member.roll_no }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">BRANCH:</td>
+                        <td class="val">{{ member.branch }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">DATE OF BIRTH:</td>
+                        <td class="val">{{ member.dob|date:"d F Y" }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">PHONE:</td>
+                        <td class="val">{{ member.phone }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">EMAIL:</td>
+                        <td class="val">{{ member.email }}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">LINKEDIN:</td>
+                        <td class="val">{% if member.linkedin %}{{ member.linkedin }}{% else %}N/A{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">INSTAGRAM:</td>
+                        <td class="val">{% if member.instagram %}{{ member.instagram }}{% else %}N/A{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">SIG:</td>
+                        <td class="val"><span class="status-badge">{{ member.sig }}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="label">CLUB ROLES:</td>
+                        <td class="val">
+                            Previous Core: <strong>{% if member.previous_core %}Yes{% else %}No{% endif %}</strong> &nbsp;|&nbsp;
+                            Y26 Core: <strong>{% if member.y26_core %}Yes{% else %}No{% endif %}</strong>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td class="photo-box">
+                {% if member.photo %}
+                    <img src="{{ member.photo.path }}" class="member-photo" alt="Member Photo">
+                {% else %}
+                    <div style="width:95px; height:125px; background:#e2e8f0; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:8pt; color:#64748b;">No Photo</div>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <!-- Skills -->
+    <div class="section-title">Technical & SIG Skills</div>
+    <div class="skills-container">
+        {% if skills %}
+            {% for skill in skills %}
+                <span class="skill-chip">{{ skill }}</span>
+            {% endfor %}
+        {% else %}
+            <em style="color:#64748b;">No specific skills selected.</em>
+        {% endif %}
+    </div>
+
+    <!-- Projects -->
+    {% if projects %}
+    <div class="section-title">Projects Contributed</div>
+    <table class="table-custom">
+        <thead>
+            <tr>
+                <th style="width: 35%;">Project Name</th>
+                <th style="width: 65%;">Contribution / Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects %}
+            <tr>
+                <td><strong>{{ project.project_name }}</strong></td>
+                <td>{{ project.contribution|linebreaksbr }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    <!-- Reflection -->
+    <div class="section-title">Reflection & Club Feedback</div>
+    <div class="reflection-block">
+        <div class="q-title">Q1: What have you learnt from the club?</div>
+        <div class="q-ans">{{ member.learning_review }}</div>
+    </div>
+    <div class="reflection-block">
+        <div class="q-title">Q2: What changes would you like to see or implement in the club?</div>
+        <div class="q-ans">{{ member.changes_review }}</div>
+    </div>
+
+    <!-- Credentials & QR -->
+    <table class="credentials-box">
+        <tr>
+            <td>
+                <div class="cred-title">System Credentials & Verification</div>
+                <div>Username: <span class="cred-val">{{ member.username }}</span></div>
+                <div>Password: <span class="cred-val">{{ plaintext_password }}</span></div>
+                <div>Member ID: <span class="cred-val">{{ member.member_id }}</span></div>
+                <div style="font-size:7.5pt; color:#475569; margin-top:4px;">
+                    Scan the QR code to verify this proforma document on the official Robotech portal.
+                </div>
+            </td>
+            <td style="width:95px; text-align:center;">
+                {% if member.qr_code %}
+                    <img src="{{ member.qr_code.path }}" class="qr-img" alt="QR Code">
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <!-- Terms & Conditions Declaration -->
+    <div class="tnc-box">
+        <strong>Declaration & Terms:</strong> By submitting this proforma, you agree to follow and abide by all the rules and code of conduct set by <strong>NITK</strong> and <b>Robotech NITK</b>.
+    </div>
+
+    <!-- Signatures -->
+    <table class="sig-table">
+        <tr>
+            <td>
+                <div class="sig-line"></div>
+                <strong class="sig-title">Convenor / Co-Convenor</strong>
+                <span class="sig-sub">Robotech NITK</span>
+            </td>
+            <td>
+                <div class="sig-line"></div>
+                <strong class="sig-title">Faculty Advisor</strong>
+                <span class="sig-sub">Robotech NITK</span>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+

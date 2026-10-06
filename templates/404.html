@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found (404) | Robotech NITK{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center my-5">
+    <div class="col-md-6 text-center">
+        <div class="proforma-card">
+            <h1 class="display-1 fw-bold text-secondary">404</h1>
+            <h3 class="fw-bold text-dark">Page or Member Record Not Found</h3>
+            <p class="text-muted">The page, proforma document, or secure token you requested does not exist or has been removed.</p>
+            <a href="{% url 'members:form' %}" class="btn btn-robotech mt-3">Return to Proforma Form</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

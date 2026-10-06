@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error (500) | Robotech NITK{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center my-5">
+    <div class="col-md-6 text-center">
+        <div class="proforma-card">
+            <h1 class="display-1 fw-bold text-danger">500</h1>
+            <h3 class="fw-bold text-dark">Server Error Encountered</h3>
+            <p class="text-muted">An internal error occurred while processing your request. The issue has been logged by our system administrators.</p>
+            <a href="{% url 'members:form' %}" class="btn btn-robotech mt-3">Return to Proforma Form</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

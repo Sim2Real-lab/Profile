@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Member Verification | Robotech NITK{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        
+        <div class="proforma-card">
+            
+            <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-4">
+                <div>
+                    <h3 class="fw-bold text-dark mb-0"><i class="fa-solid fa-shield-halved text-success me-2"></i> Verified Member Profile</h3>
+                    <span class="text-muted small">Official Robotech NITK Proforma Record</span>
+                </div>
+                <span class="badge bg-success px-3 py-2 fs-6"><i class="fa-solid fa-check me-1"></i> Verified Active</span>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    {% if member.photo %}
+                        <img src="{{ member.photo.url }}" class="img-fluid rounded border shadow-sm mb-3" style="max-height: 220px; object-fit: cover;" alt="{{ member.name }}">
+                    {% else %}
+                        <div class="bg-secondary text-white rounded d-flex align-items-center justify-content-center mb-3" style="height: 200px;">No Photo</div>
+                    {% endif %}
+                    
+                    <div class="fw-bold text-primary">{{ member.member_id }}</div>
+                    <div class="text-muted small">Submitted: {{ member.created_at|date:"d M Y" }}</div>
+                </div>
+
+                <div class="col-md-8">
+                    <h4 class="fw-bold text-dark mb-3">{{ member.name }}</h4>
+                    
+                    <table class="table table-sm table-striped">
+                        <tbody>
+                            <tr><th style="width:35%">Roll Number</th><td>{{ member.roll_no }}</td></tr>
+                            <tr><th>Branch</th><td>{{ member.branch }}</td></tr>
+                            <tr><th>SIG</th><td><span class="badge bg-info text-dark">{{ member.sig }}</span></td></tr>
+                            <tr><th>Previous Core</th><td>{% if member.previous_core %}<span class="badge bg-success">Yes</span>{% else %}<span class="badge bg-light text-dark">No</span>{% endif %}</td></tr>
+                            <tr><th>Y26 Core</th><td>{% if member.y26_core %}<span class="badge bg-success">Yes</span>{% else %}<span class="badge bg-light text-dark">No</span>{% endif %}</td></tr>
+                            <tr><th>LinkedIn</th><td>{% if member.linkedin %}<a href="{{ member.linkedin }}" target="_blank">View Profile</a>{% else %}N/A{% endif %}</td></tr>
+                            <tr><th>Instagram</th><td>{{ member.instagram|default:"N/A" }}</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h5 class="fw-bold border-bottom pb-2">Skills & Expertise</h5>
+                <div>
+                    {% for skill in skills %}
+                        <span class="badge bg-light text-dark border p-2 me-1 mb-1">{{ skill }}</span>
+                    {% empty %}
+                        <p class="text-muted small">No specific skills recorded.</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% if projects %}
+            <div class="mt-4">
+                <h5 class="fw-bold border-bottom pb-2">Projects Contributed</h5>
+                <div class="list-group">
+                    {% for p in projects %}
+                        <div class="list-group-item">
+                            <div class="fw-bold text-dark">{{ p.project_name }}</div>
+                            <div class="text-muted small">{{ p.contribution|linebreaksbr }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="mt-4 text-center">
+                <a href="{% url 'members:pdf_download' token=member.secure_token %}" class="btn btn-robotech fw-bold">
+                    <i class="fa-solid fa-download me-1"></i> Download Proforma PDF
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}

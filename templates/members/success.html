@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Proforma Generated Successfully | Robotech NITK{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        
+        <div class="proforma-card text-center">
+            
+            <div class="mb-4">
+                <i class="fa-solid fa-circle-check text-success display-1"></i>
+            </div>
+
+            <h2 class="fw-bold text-dark mb-2">Proforma Generated Successfully!</h2>
+            <p class="text-muted fs-6 mb-4">Your official Robotech NITK member proforma and authentication credentials have been created.</p>
+
+            <!-- Warning Alert -->
+            <div class="alert alert-warning text-start mb-4" role="alert">
+                <i class="fa-solid fa-triangle-exclamation me-2"></i>
+                <strong>Important Notice:</strong> Please note down or save your generated credentials below. For security reasons, passwords will not be displayed again after leaving this page.
+            </div>
+
+            <!-- Credentials Card -->
+            <div class="card border-primary mb-4 text-start bg-light shadow-sm">
+                <div class="card-header bg-primary text-white fw-bold d-flex align-items-center">
+                    <i class="fa-solid fa-key me-2"></i> System Credentials
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <span class="text-muted small d-block">Member ID</span>
+                            <span class="fw-bold fs-5 text-dark">{{ cred.member_id }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="text-muted small d-block">Full Name</span>
+                            <span class="fw-bold fs-5 text-dark">{{ cred.name }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="text-muted small d-block">Username</span>
+                            <span class="fw-bold fs-5 text-primary">{{ cred.username }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="text-muted small d-block">Generated Password</span>
+                            <span class="font-monospace fw-bold fs-5 text-danger bg-white px-2 py-1 border rounded d-inline-block">{{ cred.password }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                <a href="{% url 'members:pdf_download' token=cred.secure_token %}" class="btn btn-robotech btn-lg px-4 gap-3 fw-bold">
+                    <i class="fa-solid fa-file-pdf me-2"></i> Download Proforma PDF
+                </a>
+                <a href="{% url 'members:form' %}" class="btn btn-outline-secondary btn-lg px-4">
+                    <i class="fa-solid fa-plus me-1"></i> Submit Another Proforma
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}

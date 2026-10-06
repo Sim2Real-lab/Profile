@@ -1,0 +1,546 @@
+{% extends "base.html" %}
+
+{% block title %}Member Proforma Form | Robotech NITK{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+
+        <div class="proforma-card">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold text-dark mb-1">Member Information Proforma</h2>
+                <p class="text-muted fs-6">Please complete all steps to generate your official member proforma document
+                    and credentials.</p>
+            </div>
+
+            <!-- Step Progress Indicator -->
+            <div class="step-wizard" id="stepWizard">
+                <div class="step-item active" data-step="1">
+                    <div class="step-icon">1</div>
+                    <div class="step-label">Personal</div>
+                </div>
+                <div class="step-item" data-step="2">
+                    <div class="step-icon">2</div>
+                    <div class="step-label">SIG & Skills</div>
+                </div>
+                <div class="step-item" data-step="3">
+                    <div class="step-icon">3</div>
+                    <div class="step-label">Projects</div>
+                </div>
+                <div class="step-item" data-step="4">
+                    <div class="step-icon">4</div>
+                    <div class="step-label">Reflection</div>
+                </div>
+                <div class="step-item" data-step="5">
+                    <div class="step-icon">5</div>
+                    <div class="step-label">Review</div>
+                </div>
+            </div>
+
+            <!-- Main Form -->
+            <form id="proformaForm" method="post" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.non_field_errors %}
+                    <p class="mb-0">{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- STEP 1: Personal Information -->
+                <div class="step-content active-step" id="stepContent1">
+                    <h4 class="fw-bold border-bottom pb-2 mb-3"><i class="fa-solid fa-user me-2 text-primary"></i> Step
+                        1: Personal Information</h4>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+                            {{ form.name }}
+                            {% if form.name.errors %}<div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Roll Number <span class="text-danger">*</span></label>
+                            {{ form.roll_no }}
+                            <div class="form-text">e.g. 231MI001 (Must be unique)</div>
+                            {% if form.roll_no.errors %}<div class="text-danger small mt-1">{{ form.roll_no.errors.0 }}
+                            </div>{% endif %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Branch / Department <span
+                                    class="text-danger">*</span></label>
+                            {{ form.branch }}
+                            {% if form.branch.errors %}<div class="text-danger small mt-1">{{ form.branch.errors.0 }}
+                            </div>{% endif %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Date of Birth <span
+                                    class="text-danger">*</span></label>
+                            {{ form.dob }}
+                            {% if form.dob.errors %}<div class="text-danger small mt-1">{{ form.dob.errors.0 }}</div>{% endif %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Phone Number <span
+                                    class="text-danger">*</span></label>
+                            {{ form.phone }}
+                            {% if form.phone.errors %}<div class="text-danger small mt-1">{{ form.phone.errors.0 }}
+                            </div>{% endif %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Email Address <span
+                                    class="text-danger">*</span></label>
+                            {{ form.email }}
+                            {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors.0 }}
+                            </div>{% endif %}
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label fw-semibold">Passport Photo Upload <span
+                                    class="text-danger">*</span></label>
+                            {{ form.photo }}
+                            <div class="form-text">Upload JPG, JPEG or PNG format (Max size 5MB). Photo will be
+                                formatted in portrait 3:4 aspect ratio.</div>
+                            {% if form.photo.errors %}<div class="text-danger small mt-1">{{ form.photo.errors.0 }}
+                            </div>{% endif %}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">LinkedIn Profile URL</label>
+                            {{ form.linkedin }}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Instagram Handle</label>
+                            {{ form.instagram }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Club Info & Skills -->
+                <div class="step-content d-none" id="stepContent2">
+                    <h4 class="fw-bold border-bottom pb-2 mb-3"><i class="fa-solid fa-users me-2 text-primary"></i> Step
+                        2: Club Information & SIG Skills</h4>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-12">
+                            <label class="form-label fw-semibold mb-2">Select SIG (Special Interest Group) <span
+                                    class="text-danger">*</span></label>
+                            <div class="d-flex flex-wrap gap-4 p-3 border rounded bg-white">
+                                {% for val, label in form.sig.field.choices %}
+                                <div class="form-check m-0">
+                                    <input class="form-check-input" type="checkbox" name="sig" value="{{ val }}" id="sig_{{ forloop.counter }}" {% if form.sig.value and val in form.sig.value %}checked{% endif %}>
+                                    <label class="form-check-label fw-semibold" style="cursor:pointer;" for="sig_{{ forloop.counter }}">
+                                        {{ label }}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex align-items-center mt-3">
+                            <div class="form-check me-4">
+                                {{ form.previous_core }}
+                                <label class="form-check-label fw-semibold" for="{{ form.previous_core.id_for_label }}" style="cursor:pointer;">
+                                    Previous Core Member
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                {{ form.y26_core }}
+                                <label class="form-check-label fw-semibold" for="{{ form.y26_core.id_for_label }}" style="cursor:pointer;">
+                                    Part of Y26 Core
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="skillSection" class="border rounded p-3 bg-light d-none">
+                        <h6 class="fw-bold text-dark mb-2"><i class="fa-solid fa-gears me-2"></i> Select Your Skills
+                        </h6>
+                        <p class="text-muted small mb-3">Skills are updated based on your selected SIG. Select all that
+                            apply:</p>
+
+                        <div id="skillsCheckboxContainer" class="row row-cols-2 row-cols-md-3 g-2">
+                            {% for skill in form.fields.skills.queryset %}
+                            <div class="col skill-item-wrapper" data-sig="{{ skill.sig }}">
+                                <label class="form-check bg-white p-2 border rounded d-flex align-items-center mb-0" style="cursor:pointer;" for="skill_{{ skill.pk }}">
+                                    <input class="form-check-input ms-1 me-2" type="checkbox" name="skills" value="{{ skill.pk }}" id="skill_{{ skill.pk }}">
+                                    <span class="small fw-semibold">{{ skill.name }}</span>
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Projects -->
+                <div class="step-content d-none" id="stepContent3">
+                    <h4 class="fw-bold border-bottom pb-2 mb-3"><i
+                            class="fa-solid fa-diagram-project me-2 text-primary"></i> Step 3: Projects Contributed</h4>
+                    <p class="text-muted small">List the key projects you have contributed to within or outside Robotech
+                        NITK (including things that you have worked on in the club).</p>
+
+                    {{ project_formset.management_form }}
+                    <div id="projectFormList">
+                        {% for proj_form in project_formset %}
+                        <div class="project-form-card border rounded p-3 mb-3 bg-light position-relative">
+                            {% if proj_form.instance.pk %}{{ proj_form.id }}{% endif %}
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Project Name</label>
+                                    {{ proj_form.project_name }}
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Contribution / Role</label>
+                                    {{ proj_form.contribution }}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <button type="button" class="btn btn-outline-primary btn-sm fw-semibold" id="addProjectBtn">
+                        <i class="fa-solid fa-plus me-1"></i> Add Another Project
+                    </button>
+                </div>
+
+                <!-- STEP 4: Reflection -->
+                <div class="step-content d-none" id="stepContent4">
+                    <h4 class="fw-bold border-bottom pb-2 mb-3"><i
+                            class="fa-solid fa-pen-to-square me-2 text-primary"></i> Step 4: Reflection & Club Feedback
+                    </h4>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">1. What have you learnt from the club? <span
+                                class="text-danger">*</span></label>
+                        {{ form.learning_review }}
+                        {% if form.learning_review.errors %}<div class="text-danger small mt-1">{{
+                            form.learning_review.errors.0 }}</div>{% endif %}
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">2. What changes would you like to see or implement in the
+                            club? <span class="text-danger">*</span></label>
+                        {{ form.changes_review }}
+                        {% if form.changes_review.errors %}<div class="text-danger small mt-1">{{
+                            form.changes_review.errors.0 }}</div>{% endif %}
+                    </div>
+                </div>
+
+                <!-- STEP 5: Review & Submit -->
+                <div class="step-content d-none" id="stepContent5">
+                    <h4 class="fw-bold border-bottom pb-2 mb-3"><i
+                            class="fa-solid fa-clipboard-check me-2 text-primary"></i> Step 5: Review Your Details</h4>
+                    <div class="alert alert-info">
+                        <i class="fa-solid fa-circle-info me-2"></i> Please review your submitted details carefully.
+                        Submitting will generate your official proforma document and system login credentials.
+                    </div>
+
+                    <div id="reviewContainer" class="table-responsive bg-light p-3 border rounded mb-4">
+                        <!-- Populated by Javascript -->
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+                    <button type="button" class="btn btn-outline-secondary fw-semibold d-none" id="prevBtn">
+                        <i class="fa-solid fa-arrow-left me-1"></i> Previous
+                    </button>
+                    <button type="button" class="btn btn-robotech ms-auto fw-semibold" id="nextBtn">
+                        Next <i class="fa-solid fa-arrow-right ms-1"></i>
+                    </button>
+                    <button type="submit" class="btn btn-success ms-auto fw-semibold d-none" id="submitBtn">
+                        <i class="fa-solid fa-paper-plane me-1"></i> Submit Proforma
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const formElement = document.getElementById('proformaForm');
+        const sigSelect = document.getElementById('id_sig');
+
+        // 1. Filter skills based on selected SIG
+        const sigCheckboxes = document.querySelectorAll('input[name="sig"]');
+        const skillSection = document.getElementById('skillSection');
+
+        function updateSkillsFilter() {
+            const selectedSigs = Array.from(sigCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            const skillItems = document.querySelectorAll('.skill-item-wrapper');
+
+            if (selectedSigs.length > 0) {
+                skillSection.classList.remove('d-none');
+            } else {
+                skillSection.classList.add('d-none');
+            }
+
+            skillItems.forEach(item => {
+                const sig = item.getAttribute('data-sig');
+                if (selectedSigs.includes(sig)) {
+                    item.classList.remove('d-none');
+                } else {
+                    item.classList.add('d-none');
+                    // Uncheck hidden items
+                    const cb = item.querySelector('input[type="checkbox"]');
+                    if (cb) cb.checked = false;
+                }
+            });
+        }
+
+        if (sigCheckboxes.length > 0) {
+            sigCheckboxes.forEach(cb => {
+                cb.addEventListener('change', updateSkillsFilter);
+            });
+            updateSkillsFilter();
+        }
+
+        // 2. Dynamic Project Add
+        const addProjectBtn = document.getElementById('addProjectBtn');
+        const projectFormList = document.getElementById('projectFormList');
+        const totalFormsInput = document.querySelector('#id_projects-TOTAL_FORMS');
+
+        if (addProjectBtn && projectFormList && totalFormsInput) {
+            addProjectBtn.addEventListener('click', function () {
+                let formIdx = parseInt(totalFormsInput.value);
+                let firstCard = projectFormList.querySelector('.project-form-card');
+                if (firstCard) {
+                    let newCard = firstCard.cloneNode(true);
+                    let html = newCard.innerHTML.replace(/projects-\d+-/g, `projects-${formIdx}-`);
+                    newCard.innerHTML = html;
+
+                    // Clear inputs
+                    newCard.querySelectorAll('input, textarea').forEach(input => input.value = '');
+                    projectFormList.appendChild(newCard);
+                    totalFormsInput.value = formIdx + 1;
+                }
+            });
+        }
+
+        // 3. Step Navigation Logic
+        function showStep(step) {
+            for (let i = 1; i <= totalSteps; i++) {
+                const content = document.getElementById(`stepContent${i}`);
+                const item = document.querySelector(`.step-item[data-step="${i}"]`);
+
+                if (i === step) {
+                    content.classList.remove('d-none');
+                    item.classList.add('active');
+                } else {
+                    content.classList.add('d-none');
+                    item.classList.remove('active');
+                }
+
+                if (i < step) {
+                    item.classList.add('completed');
+                } else {
+                    item.classList.remove('completed');
+                }
+            }
+
+            // Button states
+            if (step === 1) {
+                prevBtn.classList.add('d-none');
+            } else {
+                prevBtn.classList.remove('d-none');
+            }
+
+            if (step === totalSteps) {
+                nextBtn.classList.add('d-none');
+                submitBtn.classList.remove('d-none');
+                renderReviewSummary();
+            } else {
+                nextBtn.classList.remove('d-none');
+                submitBtn.classList.add('d-none');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function validateCurrentStep(step) {
+            let valid = true;
+            const currentContainer = document.getElementById(`stepContent${step}`);
+            const requiredInputs = currentContainer.querySelectorAll('input[required], select[required], textarea[required]');
+
+            requiredInputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    input.classList.remove('is-invalid');
+                }
+            });
+
+            if (step === 1) {
+                const rollNo = document.querySelector('[name="roll_no"]').value.trim();
+                const email = document.querySelector('[name="email"]').value.trim();
+                const phone = document.querySelector('[name="phone"]').value.trim();
+                if (!rollNo || !email || !phone) valid = false;
+            }
+
+            return valid;
+        }
+
+        nextBtn.addEventListener('click', function () {
+            if (validateCurrentStep(currentStep)) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            } else {
+                alert('Please fill out all required fields before proceeding.');
+            }
+        });
+
+        prevBtn.addEventListener('click', function () {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        // 4. Populate Review Step
+        function renderReviewSummary() {
+            const container = document.getElementById('reviewContainer');
+            const getVal = (name) => {
+                const el = document.querySelector(`[name="${name}"]`);
+                return el ? el.value : 'N/A';
+            };
+
+            const selectedSkills = [];
+            document.querySelectorAll('input[name="skills"]:checked').forEach(cb => {
+                const labelText = cb.closest('.form-check').innerText.trim();
+                selectedSkills.push(labelText);
+            });
+
+            const selectedSigsArr = [];
+            document.querySelectorAll('input[name="sig"]:checked').forEach(cb => {
+                const label = cb.closest('.form-check').querySelector('label').innerText;
+                selectedSigsArr.push(label);
+            });
+
+            const projectsArr = [];
+            document.querySelectorAll('.project-form-card').forEach(card => {
+                const pName = card.querySelector('[name$="project_name"]').value.trim();
+                const pRole = card.querySelector('[name$="contribution"]').value.trim();
+                if (pName) {
+                    projectsArr.push(`<strong>${pName}</strong> - ${pRole}`);
+                }
+            });
+
+            const isPrevCore = document.querySelector('[name="previous_core"]')?.checked ? 'Yes' : 'No';
+            const isY26Core = document.querySelector('[name="y26_core"]')?.checked ? 'Yes' : 'No';
+
+            let html = `
+            <table class="table table-sm table-bordered bg-white">
+                <tbody>
+                    <tr><th style="width:30%">Full Name</th><td>${getVal('name')}</td></tr>
+                    <tr><th>Roll Number</th><td>${getVal('roll_no')}</td></tr>
+                    <tr><th>Branch</th><td>${getVal('branch')}</td></tr>
+                    <tr><th>Date of Birth</th><td>${getVal('dob')}</td></tr>
+                    <tr><th>Phone</th><td>${getVal('phone')}</td></tr>
+                    <tr><th>Email</th><td>${getVal('email')}</td></tr>
+                    <tr><th>SIG</th><td>${selectedSigsArr.join(', ') || 'None selected'}</td></tr>
+                    <tr><th>Previous Core</th><td>${isPrevCore}</td></tr>
+                    <tr><th>Part of Y26 Core</th><td>${isY26Core}</td></tr>
+                    <tr><th>Selected Skills</th><td>${selectedSkills.join(', ') || 'None selected'}</td></tr>
+                    <tr><th>Projects</th><td>${projectsArr.join('<br>') || 'None added'}</td></tr>
+                    <tr><th>Learning Review</th><td>${getVal('learning_review')}</td></tr>
+                    <tr><th>Suggested Changes</th><td>${getVal('changes_review')}</td></tr>
+                </tbody>
+            </table>
+        `;
+            container.innerHTML = html;
+        }
+
+        // 5. Caching implementation (LocalStorage)
+        function saveFormToCache() {
+            const formData = new FormData(formElement);
+            const data = {};
+            formData.forEach((value, key) => {
+                if (!data[key]) {
+                    data[key] = value;
+                } else {
+                    if (!Array.isArray(data[key])) data[key] = [data[key]];
+                    data[key].push(value);
+                }
+            });
+            localStorage.setItem('proformaCache', JSON.stringify(data));
+        }
+
+        formElement.addEventListener('change', saveFormToCache);
+        formElement.addEventListener('input', saveFormToCache);
+
+        function loadFormFromCache() {
+            const cached = localStorage.getItem('proformaCache');
+            if (cached) {
+                const data = JSON.parse(cached);
+                
+                // Reconstruct dynamic projects first
+                if (data['projects-TOTAL_FORMS']) {
+                    const totalForms = parseInt(data['projects-TOTAL_FORMS']);
+                    const currentFormsInput = document.querySelector('#id_projects-TOTAL_FORMS');
+                    if (currentFormsInput && addProjectBtn) {
+                        while (parseInt(currentFormsInput.value) < totalForms) {
+                            addProjectBtn.click();
+                        }
+                    }
+                }
+
+                // Restore field values
+                Object.keys(data).forEach(key => {
+                    if (key === 'csrfmiddlewaretoken' || key.includes('photo')) return;
+                    
+                    const els = formElement.querySelectorAll(`[name="${key}"]`);
+                    if (!els || els.length === 0) return;
+                    
+                    const value = data[key];
+                    if (els[0].type === 'checkbox' || els[0].type === 'radio') {
+                        els.forEach(el => {
+                            if (Array.isArray(value)) {
+                                el.checked = value.includes(el.value);
+                            } else {
+                                el.checked = (el.value === value);
+                            }
+                        });
+                    } else {
+                        els[0].value = value;
+                    }
+                });
+            }
+        }
+
+        formElement.addEventListener('submit', () => {
+            localStorage.removeItem('proformaCache');
+        });
+
+        // Initialize
+        loadFormFromCache();
+        if (sigCheckboxes.length > 0) updateSkillsFilter();
+        showStep(1);
+    });
+</script>
+{% endblock %}

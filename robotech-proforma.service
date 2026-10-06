@@ -1,0 +1,16 @@
+[Unit]
+Description=Robotech NITK Member Proforma Gunicorn Service
+After=network.target postgresql.service
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/robotech-proforma
+ExecStart=/var/www/robotech-proforma/venv/bin/gunicorn --config gunicorn.conf.py config.wsgi:application
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/www/robotech-proforma/logs/gunicorn.log
+StandardError=append:/var/www/robotech-proforma/logs/gunicorn_error.log
+
+[Install]
+WantedBy=multi-user.target

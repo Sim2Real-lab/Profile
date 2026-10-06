@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: robotech-proforma
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn config.wsgi:application --config gunicorn.conf.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: "2"
+      - key: PROFORMA_DOMAIN
+        sync: false
