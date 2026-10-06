@@ -144,6 +144,30 @@ class MemberProformaForm(forms.ModelForm):
             raise ValidationError("Please select at least one SIG.")
         return ", ".join(sig)
 
+    def clean_linkedin(self):
+        url = self.cleaned_data.get('linkedin', '')
+        if not url:
+            return None
+        url = str(url).strip()
+        if not url:
+            return None
+        if not (url.startswith('http://') or url.startswith('https://')):
+            if 'linkedin.com' in url.lower():
+                url = f"https://{url}"
+            else:
+                url = f"https://linkedin.com/in/{url.lstrip('/')}"
+        return url
+
+    def clean_instagram(self):
+        handle = self.cleaned_data.get('instagram', '')
+        if not handle:
+            return None
+        handle = str(handle).strip()
+        if handle.startswith('@'):
+            handle = handle.lstrip('@')
+        return handle or None
+
+
 
 class ProjectForm(forms.ModelForm):
     class Meta:

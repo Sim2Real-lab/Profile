@@ -115,14 +115,17 @@
                         <div class="col-md-6">
                             <label class="form-label fw-semibold">LinkedIn Profile URL</label>
                             {{ form.linkedin }}
+                            {% if form.linkedin.errors %}<div class="text-danger small mt-1">{{ form.linkedin.errors.0 }}</div>{% endif %}
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label fw-semibold">Instagram Handle</label>
                             {{ form.instagram }}
+                            {% if form.instagram.errors %}<div class="text-danger small mt-1">{{ form.instagram.errors.0 }}</div>{% endif %}
                         </div>
                     </div>
                 </div>
+
 
                 <!-- STEP 2: Club Info & Skills -->
                 <div class="step-content d-none" id="stepContent2">
